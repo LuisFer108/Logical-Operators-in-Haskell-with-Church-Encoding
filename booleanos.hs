@@ -20,18 +20,14 @@ ifThenElse = \p x y -> p x y -- TODO: implement using only the boolean
 
 
 churchAnd :: (a -> a -> a) -> (a -> a -> a) -> a -> a -> a
--- churchAnd = \p q -> p q false (Initially, we tried to do this, which logic wise is correct, but there is type formatting issues)
-churchAnd = \p q -> \x y -> p (q x y) y
+churchAnd = \p q -> \x y -> p (q x y) y --if `p` is true, it returns `q`(because that is the definition of true), and if `p` is false, it returns false
 
 
 churchOr :: (a -> a -> a) -> (a -> a -> a) -> a -> a -> a
---churchOr = \p q -> p true q (We tried this one, but it has type issues)
-churchOr = \p q -> \x y -> p x (q x y) 
-
+churchOr = \p q -> \x y -> p x (q x y) --When `p` is false, it returns `q`(the second parameter), and when `p` is true, it returns true(the first parameter)
 
 churchNot :: (a -> a -> a) -> a -> a -> a
---churchNot = \p -> p false true  (We tried this one, but it has type issues)
-churchNot = \p x y -> p y x 
+churchNot = \p x y -> p y x --if `p` is true, it returns false, and if `p` is false, it returns true
 
 
 -- Converts a Church boolean to a string
