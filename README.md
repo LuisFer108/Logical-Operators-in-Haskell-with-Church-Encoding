@@ -3,7 +3,10 @@
 **Students:** 
 
 Luis Fernando Bernal Ramirez
+
 Juan Jose Roldan
+
+
 
 ---
 
@@ -94,5 +97,6 @@ Here we use `x` and `y` as replacements for true and false respectively.
 
 ## References sources
 -ChatGPT was used for research on Church logical operators and logic behind 'And' operator.
+
 -Gemini and Copilot were used for troubleshooting, specifically the error we had with the types.
 
