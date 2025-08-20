@@ -3,7 +3,7 @@
 **Students:** 
 
 Luis Fernando Bernal Ramirez
-Juan Jose
+Juan Jose Roldan
 
 ---
 
@@ -31,7 +31,7 @@ We already have the definition of a Church boolean, where a boolean is a functio
 
 With that in mind, we can procede with the implementation of the logical operators using these definitions:
 
-**ifThenElse**
+### ifThenElse
 We need to return the first value if the boolean is true, and the second value if the boolean is false,
 you can see that those are just the definitions of each boolean, so we just need to give the boolean the 
 two values:
@@ -40,7 +40,7 @@ two values:
     ifThenElse = \p x y -> p x y --if p is true, it returns x(first value), if p it is false, it returns y(second value)--
 
     
-**churchAnd**
+### churchAnd
 We need to return true only if both booleans are true. We also know that if the first boolean `p` is true, the 
 result is going to be the value of the second boolean `q`. So, we can say that:
     
@@ -61,7 +61,7 @@ Here we use `x` and `y` as a kind of placeholder for true and false, so we can u
 value).
 
 
-**churchOr**
+### churchOr
 We need to return false only if both booleans are false. We also know that if the first boolean `p` is false,
 then the result must be the value of the second boolean `q`. And if the first boolean `p` is true, then the 
 result must be true regardless of the other boolean.
@@ -76,7 +76,7 @@ Again, this syntax is not correct given the types defined for the functions, so 
     churchOr = \p q -> \x y -> p x (q x y)
 
 
-**churchNot**
+### churchNot
 We need to return false when the boolean `p` is true, and return true when the boolean `p`is false.
 So we can theoretically just do this:
 
